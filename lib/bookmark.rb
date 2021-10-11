@@ -1,3 +1,5 @@
+require 'pg'
+
 class Bookmark 
 
   attr_reader :url
@@ -7,6 +9,8 @@ class Bookmark
   end
 
   def self.all
-    [Bookmark.new('www.youtube.com'), Bookmark.new('www.google.com')]
+    con = PG.connect :dbname => 'bookmark_manager'
+    rs = con.exec "SELECT * FROM bookmarks"
+    return rs
   end
 end

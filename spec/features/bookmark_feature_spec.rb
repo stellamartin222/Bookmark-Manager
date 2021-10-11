@@ -8,7 +8,6 @@ end
 feature 'Displays bookmarks' do
   scenario 'Able to display a number of bookmarks' do
     visit('/bookmarks')
-    expect(page).to have_content 'www.youtube.com'
-    expect(page).to have_content 'www.google.com'
+    expect(page).to have_content 'http://www.makersacademy.com/'
   end
 end

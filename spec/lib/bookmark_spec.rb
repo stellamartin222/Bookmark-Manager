@@ -9,10 +9,12 @@ describe Bookmark do
   end
 
   describe '#all' do
-    it 'returns a hard coded array of instances' do
+    it 'returns from bookmarks sql table' do
       bookmarks = Bookmark.all
-      expect(bookmarks[0].url).to eq 'www.youtube.com'
-      expect(bookmarks[1].url).to eq 'www.google.com'
+      expect(bookmarks[0]['url']).to eq 'http://www.makersacademy.com/'
+      expect(bookmarks[1]['url']).to eq 'http://www.google.com/'
+      expect(bookmarks[2]['url']).to eq 'http://www.destroyallsoftware.com'
+      expect(bookmarks[3]['url']).to eq 'http://www.facebook.com/'
     end
   end
 end
