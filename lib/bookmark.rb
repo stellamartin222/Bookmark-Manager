@@ -11,6 +11,9 @@ class Bookmark
   def self.all
     con = PG.connect :dbname => 'bookmark_manager'
     rs = con.exec "SELECT * FROM bookmarks"
-    return rs
+    arr = rs.map{|value| 
+      value['url']
+    }
+    return arr
   end
 end

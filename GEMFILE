@@ -1,6 +1,10 @@
+source 'https://rubygems.org'
+
 gem 'rspec'
 gem 'sinatra'
 gem 'capybara'
 gem 'webrick'
 gem 'rubocop'
 gem 'pg'
+gem 'simplecov'
+gem 'simplecov-console'
