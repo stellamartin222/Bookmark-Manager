@@ -1,59 +1,78 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/lewis.jones/Makers/Bookmark-Manager/app.rb": {
+      "/Users/samthoburn/Desktop/Repos/Bookmark-Manager/app.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null
         ]
       },
-      "/Users/lewis.jones/Makers/Bookmark-Manager/spec/features/bookmark_feature_spec.rb": {
+      "/Users/samthoburn/Desktop/Repos/Bookmark-Manager/spec/features/bookmark_feature_spec.rb": {
         "lines": [
           1,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           null,
           1,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/lewis.jones/Makers/Bookmark-Manager/spec/lib/bookmark_spec.rb": {
+      "/Users/samthoburn/Desktop/Repos/Bookmark-Manager/spec/lib/bookmark_spec.rb": {
         "lines": [
           1,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/lewis.jones/Makers/Bookmark-Manager/lib/bookmark.rb": {
+      "/Users/samthoburn/Desktop/Repos/Bookmark-Manager/lib/bookmark.rb": {
         "lines": [
-
+          1,
+          null,
+          1,
+          null,
+          1,
+          3,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
         ]
       }
     },
-    "timestamp": 1633959956
+    "timestamp": 1633960666
   }
 }
