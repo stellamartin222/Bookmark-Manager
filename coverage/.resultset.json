@@ -1,0 +1,59 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/lewis.jones/Makers/Bookmark-Manager/app.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/lewis.jones/Makers/Bookmark-Manager/spec/features/bookmark_feature_spec.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/lewis.jones/Makers/Bookmark-Manager/spec/lib/bookmark_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/lewis.jones/Makers/Bookmark-Manager/lib/bookmark.rb": {
+        "lines": [
+
+        ]
+      }
+    },
+    "timestamp": 1633959956
+  }
+}
