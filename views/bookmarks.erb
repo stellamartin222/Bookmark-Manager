@@ -1,6 +1,5 @@
 <h1>Bookmarks</h1>
 
-<ul>
-  <li>www.youtube.com</li>
-  <li>www.google.com</li>
-</ul>
+<% @bookmarks.each do | bookmark |%>
+<%= bookmark.url %> <br>
+<% end %>
