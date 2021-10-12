@@ -7,12 +7,7 @@ end
 
 feature 'Displays bookmarks' do
   scenario 'Able to display a number of bookmarks' do
-    connection = PG.connect(dbname: 'bookmark_manager_test')
-
-    # Add test data
-    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com/');")
-    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.google.com/');")
-    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.destroyallsoftware.com');")
+    test_db_inserts
 
     visit('/bookmarks')
     expect(page).to have_content 'http://www.makersacademy.com/'
