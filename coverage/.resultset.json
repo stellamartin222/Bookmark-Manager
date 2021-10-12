@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ittrade/Desktop/Makers/Week6/Bookmark-Manager/app.rb": {
+      "/Users/lewis.jones/Makers/Bookmark-Manager/app.rb": {
         "lines": [
           1,
           1,
@@ -18,7 +18,7 @@
           null
         ]
       },
-      "/Users/ittrade/Desktop/Makers/Week6/Bookmark-Manager/lib/bookmark.rb": {
+      "/Users/lewis.jones/Makers/Bookmark-Manager/lib/bookmark.rb": {
         "lines": [
           1,
           null,
@@ -33,15 +33,17 @@
           1,
           2,
           2,
-          2,
-          8,
+          null,
+          0,
+          null,
           null,
           2,
+          41,
           null,
           null
         ]
       },
-      "/Users/ittrade/Desktop/Makers/Week6/Bookmark-Manager/spec/features/bookmark_feature_spec.rb": {
+      "/Users/lewis.jones/Makers/Bookmark-Manager/spec/features/bookmark_feature_spec.rb": {
         "lines": [
           1,
           1,
@@ -52,13 +54,20 @@
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           null,
           null
         ]
       },
-      "/Users/ittrade/Desktop/Makers/Week6/Bookmark-Manager/spec/lib/bookmark_spec.rb": {
+      "/Users/lewis.jones/Makers/Bookmark-Manager/spec/lib/bookmark_spec.rb": {
         "lines": [
           1,
           null,
@@ -73,7 +82,14 @@
           1,
           1,
           1,
+          null,
+          null,
           1,
+          1,
+          1,
+          null,
+          1,
+          null,
           1,
           1,
           1,
@@ -83,6 +99,6 @@
         ]
       }
     },
-    "timestamp": 1633965989
+    "timestamp": 1634045076
   }
 }
