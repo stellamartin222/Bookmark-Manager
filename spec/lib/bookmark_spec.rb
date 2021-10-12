@@ -18,4 +18,14 @@ describe Bookmark do
       expect(bookmarks[2]).to eq 'http://www.destroyallsoftware.com'
     end
   end
+
+  describe "#create" do
+    it 'creates a new bookmark' do
+      Bookmark.create('http://www.facebook.com/')
+
+      bookmarks = Bookmark.all
+      
+      expect(bookmarks).to include 'http://www.facebook.com/'
+    end
+  end
 end
