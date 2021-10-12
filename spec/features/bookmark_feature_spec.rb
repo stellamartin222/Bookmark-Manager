@@ -10,7 +10,7 @@ feature 'Displays bookmarks' do
     test_db_inserts
 
     visit('/bookmarks')
-    expect(page).to have_content 'http://www.makersacademy.com/'
+    expect(page).to have_content 'makers'
   end
 end
 
@@ -21,6 +21,6 @@ feature 'Adds bookmarks' do
     page.fill_in('title', with: 'facebook')
     page.click_button('Submit')
     expect(page).to have_current_path('/bookmarks')
-    expect(page).to have_content('http://www.facebook.com/')
+    expect(page).to have_content('facebook')
   end
 end
