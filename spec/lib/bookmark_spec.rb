@@ -21,7 +21,7 @@ describe Bookmark do
 
   describe "#create" do
     it 'creates a new bookmark' do
-      Bookmark.create('http://www.facebook.com/')
+      Bookmark.create('http://www.facebook.com/', 'facebook')
 
       bookmarks = Bookmark.all
       

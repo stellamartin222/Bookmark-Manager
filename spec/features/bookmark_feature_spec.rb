@@ -18,6 +18,7 @@ feature 'Adds bookmarks' do
   scenario 'Able to add a new bookmark to the list of bookmarks' do
     visit('/create-bookmark')
     page.fill_in('url', with: 'http://www.facebook.com/')
+    page.fill_in('title', with: 'facebook')
     page.click_button('Submit')
     expect(page).to have_current_path('/bookmarks')
     expect(page).to have_content('http://www.facebook.com/')
