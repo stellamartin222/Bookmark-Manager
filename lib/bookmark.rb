@@ -12,7 +12,9 @@ class Bookmark
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect :dbname => 'bookmark_manager_test'
     else
+      # :nocov:
       connection = PG.connect :dbname => 'bookmark_manager'  
+      # :nocov:
     end
     
     result = connection.exec "SELECT * FROM bookmarks"
@@ -23,9 +25,11 @@ class Bookmark
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect :dbname => 'bookmark_manager_test'
     else
-      connection = PG.connect :dbname => 'bookmark_manager'  
+      # :nocov:
+      connection = PG.connect :dbname => 'bookmark_manager'
+      # :nocov:
     end
-
+    
     connection.exec "INSERT INTO bookmarks(url) VALUES('#{url}');"
   end
 end
