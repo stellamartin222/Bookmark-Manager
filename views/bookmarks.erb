@@ -1,6 +1,8 @@
 <h1>Bookmarks</h1>
 
-<% @bookmarks.each do | bookmark |%>
-<a href="<%=bookmark.url%>">   <%= bookmark.title %></a> <br>
-    
+<% @bookmarks.each_with_index do | bookmark, index |%>
+<section id=<%=index%>>
+<a href="<%=bookmark.url%>">   <%= bookmark.title %></a> 
+<button value="delete" type="submit">delete</button> <br>
+</section>
 <% end %>
