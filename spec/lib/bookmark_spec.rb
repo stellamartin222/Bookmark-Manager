@@ -21,4 +21,18 @@ describe Bookmark do
       expect(bookmark.title).to eq 'facebook'
     end
   end
+
+  describe "#delete" do
+    it 'deletes a bookmark when passed the title' do
+      bookmark = Bookmark.create('http://www.facebook.com/', 'facebook')
+      data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
+      expect(data.first["title"]).to eq 'facebook'
+  
+      Bookmark.delete(bookmark.id)
+
+      persisted_data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
+
+      expect(persisted_data.first.nil?).to eq true
+    end
+  end
 end
