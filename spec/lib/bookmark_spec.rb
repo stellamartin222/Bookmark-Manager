@@ -23,12 +23,25 @@ describe Bookmark do
   end
 
   describe "#delete" do
-    it 'deletes a bookmark when passed the title' do
+    it 'deletes a bookmark when passed the id' do
       bookmark = Bookmark.create('http://www.facebook.com/', 'facebook')
       data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
       expect(data.first["title"]).to eq 'facebook'
   
       Bookmark.delete(bookmark.id)
+
+      persisted_data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
+
+      expect(persisted_data.first.nil?).to eq true
+    end
+  end
+
+  describe "#update" do
+    it 'updates a bookmark when passed the id' do
+      bookmark = Bookmark.create('http://www.facebook.com/', 'facebook')
+      data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
+  
+      Bookmark.update(bookmark.id )
 
       persisted_data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
 

@@ -1,5 +1,3 @@
-<h1>Bookmarks</h1>
-
 <% @bookmarks.each_with_index do | bookmark, index |%>
   <section id=<%=index%>>
     <a href="<%=bookmark.url%>">   <%= bookmark.title %></a> 
