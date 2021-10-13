@@ -40,12 +40,13 @@ describe Bookmark do
     it 'updates a bookmark when passed the id' do
       bookmark = Bookmark.create('http://www.facebook.com/', 'facebook')
       data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
-  
-      Bookmark.update(bookmark.id )
+      bookmark1 = Bookmark.find(bookmark.id)
+      bookmark1.update("www.twitter.com", "twitter")
 
       persisted_data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
 
-      expect(persisted_data.first.nil?).to eq true
+      expect(bookmark1.id).to eq persisted_data.first['id']
+      expect(bookmark1.title).to eq 'twitter'
     end
   end
 end

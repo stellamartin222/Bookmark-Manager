@@ -2,8 +2,12 @@
   <section id=<%=index%>>
     <a href="<%=bookmark.url%>">   <%= bookmark.title %></a> 
 
-    <form action="/bookmarks/<%=bookmark.id%>" method="post">
-      <input value="delete" type="submit"><br>
+    <form action="/bookmarks/delete/<%=bookmark.id%>" method="post">
+      <input value="delete" type="submit">
     </form>
+    <form action="/bookmarks/update/<%=bookmark.id%>" method="get">
+      <input value="update" type="submit"><br>
+    </form>
+
   </section>
 <% end %>
