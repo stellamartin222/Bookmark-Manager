@@ -38,15 +38,33 @@ describe Bookmark do
 
   describe "#update" do
     it 'updates a bookmark when passed the id' do
-      bookmark = Bookmark.create('http://www.facebook.com/', 'facebook')
+      Bookmark.create('http://www.facebook.com/', 'facebook')
       data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
-      bookmark1 = Bookmark.find(bookmark.id)
-      bookmark1.update("www.twitter.com", "twitter")
+
+      bookmark_id = data.first['id']
+
+      bookmark = Bookmark.find(bookmark_id)
+      bookmark.update("www.twitter.com", "twitter")
 
       persisted_data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
+      result = persisted_data.first
 
-      expect(bookmark1.id).to eq persisted_data.first['id']
-      expect(bookmark1.title).to eq 'twitter'
+      expect(result['title']).to eq 'twitter'
+      expect(result['url']).to eq 'www.twitter.com'
+    end
+  end
+
+  describe "#find" do
+    it 'returns a bookmark object when passed the id' do
+      Bookmark.create('http://www.facebook.com/', 'facebook')
+      data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks;")
+
+      bookmark_id = data.first['id']
+      
+      bookmark = Bookmark.find(bookmark_id)
+      expect(bookmark.id).to eq bookmark_id
+      expect(bookmark.title).to eq 'facebook'
+      expect(bookmark.url).to eq 'http://www.facebook.com/'
     end
   end
 end

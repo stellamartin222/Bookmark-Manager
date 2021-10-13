@@ -42,12 +42,14 @@ feature 'Update bookmarks' do
   scenario 'Able to update a bookmark in the list of bookmarks' do
     test_db_inserts
     visit('/bookmarks')
+
     within("section[@id='0']") do
       click_button('update')
     end
+
     page.fill_in('url', with: 'http://www.facebook.com/')
     page.fill_in('title', with: 'facebook')
-    page.click_button('submit')
+    page.click_button('Submit')
   
     expect(page).to have_current_path('/bookmarks')
     expect(page).to_not have_content('facebook')

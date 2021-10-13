@@ -59,7 +59,7 @@ class Bookmark
     Bookmark.new(result[0]['id'], result[0]['url'], result[0]['title'])
   end
 
-  def update(title, url)
+  def update(url, title)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect :dbname => 'bookmark_manager_test'
     else

@@ -34,7 +34,6 @@ class BookmarkManager < Sinatra::Base
     end
 
     post '/bookmarks/update/:title/:url' do
-        print session[:id]
         @bookmark = Bookmark.find(session[:id])
         @bookmark.update(params[:url], params[:title])
         redirect("/bookmarks")
