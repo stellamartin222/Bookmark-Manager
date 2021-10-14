@@ -66,3 +66,17 @@ feature 'url validation' do
     expect(page).to have_content("You must submit a valid URL.")
   end
 end
+
+feature 'comment on a bookmark' do
+  scenario 'can comment on a bookmark' do
+    visit('/bookmarks')
+    within("section[@id='0']") do
+      page.fill_in('comment_input', with: 'what a nifty bookmark')
+      click_button('comment')
+    end
+
+    res = DatabaseConnection.query('SELECT * FROM comments;')
+    comment = res.first
+    expect(comment['text']).to eq 'what a nifty bookmark'
+  end
+end
