@@ -13,4 +13,5 @@ def drop_test_db
     connection = PG.connect(dbname: 'bookmark_manager_test')
     # Clear the bookmarks table
     connection.exec("TRUNCATE bookmarks;")
+    connection.exec("TRUNCATE comments;")
 end

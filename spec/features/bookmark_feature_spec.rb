@@ -69,6 +69,8 @@ end
 
 feature 'comment on a bookmark' do
   scenario 'can comment on a bookmark' do
+    DatabaseConnection.setup('bookmark_manager_test')
+    DatabaseConnection.query("INSERT INTO bookmarks(url, title) VALUES ('http://www.techradar.com/', 'Techradar');")
     visit('/bookmarks')
     within("section[@id='0']") do
       page.fill_in('comment_input', with: 'what a nifty bookmark')
