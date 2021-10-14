@@ -59,10 +59,10 @@ end
 feature 'url validation' do
   scenario 'alerted if the url is invalid' do
     visit('/create-bookmark')
-    page.fill_in('url', with: 'http:/ww.facebook.com/')
+    page.fill_in('url', with: 'thisisnotaurl')
     page.fill_in('title', with: 'facebook')
     page.click_button('Submit')
 
-    expect(page).to have_content("invalid url")
+    expect(page).to have_content("You must submit a valid URL.")
   end
 end
