@@ -52,6 +52,6 @@ feature 'Update bookmarks' do
     page.click_button('Submit')
   
     expect(page).to have_current_path('/bookmarks')
-    expect(page).to_not have_content('facebook')
+    expect(page).to have_content('facebook')
   end
 end
