@@ -63,6 +63,6 @@ feature 'url validation' do
     page.fill_in('title', with: 'facebook')
     page.click_button('Submit')
 
-    expect(page).to have_current_path('/bookmarks')
+    expect(page).to have_content("invalid url")
   end
 end

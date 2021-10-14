@@ -21,11 +21,13 @@ class BookmarkManager < Sinatra::Base
     end
 
     post '/new-bookmark' do
-        # if params[:url] == 'hello'
-        #     flash[:error] = 'Oh gosh'
-        # end
-        Bookmark.create(params[:url], params[:title])
-        redirect('/bookmarks')
+        if params['url'] =~ /\A#{URI::regexp(['http', 'https'])}\z/
+            Bookmark.create(params['url'], params[:title])
+            redirect('/bookmarks')
+        else
+            flash[:notice] = "You must submit a valid URL."
+            redirect('/create-bookmark')
+        end
     end
 
     post '/bookmarks/delete/:id' do

@@ -8,12 +8,5 @@
   <a href="/bookmarks">Bookmarks</a>
   <a href="/create-bookmark">Create A Bookmark</a><br><br>
   
-  <% flash.keys.each do |type| %>
-  <div data-alert class="flash <%= type %> alert-box radius">
-    <%= flash[type] %>
-    <a href="#" class="close">&times;</a>
-  </div>
-  <% end %>
-  
   <%= yield %>
 </html>
