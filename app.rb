@@ -1,9 +1,11 @@
 require 'sinatra'
+require 'sinatra/flash'
 require './lib/bookmark'
 require './lib/database_connection_setup'
 
 class BookmarkManager < Sinatra::Base
     enable :sessions
+    register Sinatra::Flash
 
     get '/' do
         erb(:index)
@@ -19,6 +21,9 @@ class BookmarkManager < Sinatra::Base
     end
 
     post '/new-bookmark' do
+        # if params[:url] == 'hello'
+        #     flash[:error] = 'Oh gosh'
+        # end
         Bookmark.create(params[:url], params[:title])
         redirect('/bookmarks')
     end
